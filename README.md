@@ -4,8 +4,8 @@ This is a dummy representation of a movie rental system.
 Can you help us fix some issues and implement missing features?
 
  * The app is throwing an error when we start, please help us. Also, tell us what caused the issue.
-        IRentalFeatures is registered as Singleton, but it depends on MovieRentalDbContext which is Scoped (AddDbContext). A singleton can't hold a scoped dependency, so DI throws at startup.
-        Also: IMovieFeatures is not registered, so MovieController can't be constructed.
+        * IRentalFeatures is registered as Singleton, but it depends on MovieRentalDbContext which is Scoped (AddDbContext). A singleton can't hold a scoped dependency, so DI throws at startup.<br/>
+        * Also: IMovieFeatures is not registered, so MovieController can't be constructed.</i>
  * The rental class has a method to save, but it is not async, can you make it async and explain to us what is the difference?
         Sync SaveChanges() blocks the request thread while waiting for DB I/O.
         Async await SaveChangesAsync() still "waits" logically, but it doesn't block a thread during the DB roundtrip, so better scalability under load.
