@@ -22,7 +22,7 @@ namespace MovieRental.Rental
                 throw new ArgumentNullException(nameof(rental.PaymentMethod));
             }
 
-            if (_paymentProvider.TryGetValue(rental.PaymentMethod, out var payProvider))
+            if (!_paymentProvider.TryGetValue(rental.PaymentMethod, out var payProvider))
             {
                 throw new ArgumentException($"Payment method not supported: {rental.PaymentMethod}");
             }
